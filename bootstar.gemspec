@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Bootstar::VERSION
   s.authors     = ["Giovanni Cappellotto"]
   s.email       = ["potomak84@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "http://github.com/hackatron/bootstar"
   s.summary     = %q{A tool to bootstrap your service oriented app}
   s.description = %q{Bootstar is a tool to bootstrap your service oriented app.}
 
