@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Giovanni Cappellotto"]
   s.email       = ["potomak84@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{A tool to bootstrap your service oriented app}
+  s.description = %q{Bootstar is a tool to bootstrap your service oriented app.}
 
   s.rubyforge_project = "bootstar"
 
