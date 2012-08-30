@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+# require 'bootstar'
+
+begin
+  Bootstar::CLI.new *ARGV.dup
+rescue StandardError => e
+  puts "Error: #{e.message}"
+end
