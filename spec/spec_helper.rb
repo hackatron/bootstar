@@ -1,7 +1,8 @@
 require 'rubygems'
 require 'bundler/setup'
 
-require 'bootstar'
+# require 'bootstar'
+require 'debugger'
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
