@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe 'App creation' do
-  context 'bootstar init' do
+  context 'bootstar new' do
     before(:all) do
-      system('bootstar init test-app')
+      system('bootstar new test-app')
     end
 
     after(:all) do
