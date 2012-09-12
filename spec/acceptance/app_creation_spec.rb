@@ -2,28 +2,15 @@ require 'spec_helper'
 
 describe 'App creation' do
   context 'bootstar new' do
-    before(:all) do
+    it 'should create the default directory structure' do
       system('bootstar new test-app')
-    end
 
-    after(:all) do
-      system('rm -rf test-app')
-    end
-
-    it 'should create folder with the app name' do
       File.directory?('./test-app').should be_true
-    end
-
-    it 'should create a directory for the API' do
       File.directory?('./test-app/test-app-api').should be_true
-    end
-
-    it 'should create a directory for the client' do
       File.directory?('./test-app/test-app-client').should be_true
-    end
-
-    it 'should create a directory for the API wrapper gem' do
       File.directory?('./test-app/test-app-ruby').should be_true
+
+      system('rm -rf test-app')
     end
   end
 end
