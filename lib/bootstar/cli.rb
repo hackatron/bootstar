@@ -6,7 +6,7 @@ module Bootstar
     def new(name)
       Dir.mkdir(File.join('.', name))
       Dir.chdir(File.join('.', name))
-      ['api', 'client', 'ruby'].each {|dir| Dir.mkdir(File.join('.', "#{name}-#{dir}"))}
+      %w(api client ruby).each { |dir| Dir.mkdir(File.join('.', "#{name}-#{dir}")) }
     end
   end
 end
