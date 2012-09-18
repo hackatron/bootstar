@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.add_dependency 'thor'
+  s.add_dependency 'rails_wizard'
 
   # specify any dependencies here; for example:
   s.add_development_dependency 'rspec'
