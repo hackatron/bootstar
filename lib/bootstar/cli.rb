@@ -1,4 +1,5 @@
 require 'thor'
+require 'bootstar'
 
 module Bootstar
   class CLI < Thor
