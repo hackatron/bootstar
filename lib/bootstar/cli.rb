@@ -9,7 +9,7 @@ module Bootstar
       Dir.chdir(File.join('.', name))
       %w(api client ruby).each { |dir| Dir.mkdir(File.join('.', "#{name}-#{dir}")) }
 
-      new_api(name, [])
+      new_api(name)
     end
 
     no_tasks do
@@ -20,7 +20,7 @@ module Bootstar
       def green; "\033[32m" end
       def yellow; "\033[33m" end
 
-      def new_api(name, recipes)
+      def new_api(name, recipes = [])
         puts
         puts
         puts "#{bold}Generating and Running Template...#{clear}"
@@ -29,7 +29,10 @@ module Bootstar
         template = RailsWizard::Template.new(recipes)
         file.write template.compile
         file.close
-        system "rails-api new #{name}-api -m #{file.path} #{template.args.join(' ')}"
+        system %Q(
+          cd #{name}-api
+          rails-api new . -m #{file.path} #{template.args.join(' ')}
+        )
       ensure
         file.unlink
       end
