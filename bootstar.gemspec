@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'thor'
   s.add_dependency 'rails_wizard'
+  s.add_dependency 'rails-api'
 
   # specify any dependencies here; for example:
   s.add_development_dependency 'rspec'
