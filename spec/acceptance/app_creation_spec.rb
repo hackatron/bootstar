@@ -3,7 +3,23 @@ require 'spec_helper'
 describe 'App creation' do
   context 'bootstar new' do
     before(:each) do
-      system('bootstar new test-app')
+      IO.popen('bootstar new test-app', 'r+') do |f|
+        s = ''
+        while s << f.readchar && !s.match(/Enter your selection\:[^m]*/)
+          s = '' if s.split("\n").size > 1
+
+          m = s.match(/(\d+)\)[^P]+PostgreSQL/)
+          choice = m[1] if m
+        end
+
+        f.puts "#{choice}\n"
+
+        while s << f.readchar && !s.match(/\(y\/n\)[^m]*/)
+          s = '' if s.split("\n").size > 1
+        end
+
+        f.puts "y\n"        
+      end
     end
 
     after(:each) do

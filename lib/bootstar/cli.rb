@@ -9,7 +9,7 @@ module Bootstar
       Dir.chdir(File.join('.', name))
       %w(api client ruby).each { |dir| Dir.mkdir(File.join('.', "#{name}-#{dir}")) }
 
-      new_api(name)
+      new_api(name, API_RECIPES)
     end
 
     no_tasks do
