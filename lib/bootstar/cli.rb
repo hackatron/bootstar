@@ -25,7 +25,7 @@ module Bootstar
         puts
         puts "#{bold}Generating and Running Template...#{clear}"
         puts
-        file = Tempfile.new('template')        
+        file = Tempfile.new('template')
         template = RailsWizard::Template.new(recipes)
         file.write template.compile
         file.close
